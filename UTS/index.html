@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Auth Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <!-- Kolom Kiri: Branding / Ilustrasi (CSS only, tanpa gambar) -->
+        <section class="brand-panel">
+            <div class="brand-shape shape-1"></div>
+            <div class="brand-shape shape-2"></div>
+
+            <div class="brand-content">
+                <p class="brand-logo">Nimbus</p>
+                <h2>Kelola pekerjaanmu dengan lebih tenang.</h2>
+                <p class="brand-text">
+                    Satu akun untuk semua tools yang kamu pakai sehari-hari.
+                    Cepat, rapi, dan aman.
+                </p>
+            </div>
+        </section>
+
+        <!-- Kolom Kanan: Form Login -->
+        <section class="form-panel">
+            <div class="form-wrapper">
+
+                <p class="form-logo">Nimbus</p>
+                <h1>Selamat Datang Kembali</h1>
+                <p class="subtitle">Masuk ke akun kamu untuk melanjutkan</p>
+
+                <button type="button" class="btn-google">
+                    <svg class="icon-google" viewBox="0 0 48 48" aria-hidden="true">
+                        <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.3-.4-3.5z"/>
+                        <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 7.1 29.5 5 24 5c-7.6 0-14.2 4.3-17.7 10.6z"/>
+                        <path fill="#4CAF50" d="M24 44c5.4 0 10.3-2.1 14-5.5l-6.4-5.4c-2 1.5-4.6 2.4-7.6 2.4-5.3 0-9.7-3.4-11.3-8.1l-6.6 5c3.4 6.7 10.1 11.6 17.9 11.6z"/>
+                        <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4-4.1 5.3l6.4 5.4C40.9 36 44 30.5 44 24c0-1.2-.1-2.3-.4-3.5z"/>
+                    </svg>
+                    <span>Masuk dengan Google</span>
+                </button>
+
+                <div class="divider"><span>atau</span></div>
+
+                <form action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="email">Email atau Username</label>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            placeholder="Masukkan email atau username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Masukkan password"
+                                required
+                            >
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                id="togglePassword"
+                                aria-label="Tampilkan password"
+                            >
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 11a4 4 0 110-8 4 4 0 010 8z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember" name="remember">
+                            Remember Me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Sign In</button>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Toggle show/hide password secara sederhana
+        const toggleBtn = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        toggleBtn.addEventListener('click', function () {
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+            toggleBtn.setAttribute(
+                'aria-label',
+                isHidden ? 'Sembunyikan password' : 'Tampilkan password'
+            );
+        });
+    </script>
+
+</body>
+</html>
